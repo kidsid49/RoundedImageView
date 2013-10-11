@@ -7,23 +7,26 @@
 //
 
 #import "ViewController.h"
+#import "RoundedImageView.h"
 
-@interface ViewController ()
-
-@end
 
 @implementation ViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+    
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    //Creating a rounded image view.
+    RoundedImageView *profileImageView = [[RoundedImageView alloc] initWithFrame:CGRectMake(100, 100, 120, 120)];
+    
+    //Configring the rounded imageview by setting appropriate image and offset.
+    profileImageView.imageOffset = 2.5;
+    profileImageView.image = [UIImage imageNamed:@"profile_pic.jpg"];
+    profileImageView.backgroundImage = [UIImage imageNamed:@"dp_holder_large.png"];
+    
+    //Adding rounded image view to main view.
+    [self.view addSubview:profileImageView];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end
